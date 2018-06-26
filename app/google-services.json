@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "74527096262",
+    "firebase_url": "https://presentclass2018.firebaseio.com",
+    "project_id": "presentclass2018",
+    "storage_bucket": "presentclass2018.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74527096262:android:8dabafa95b94d4b8",
+        "android_client_info": {
+          "package_name": "com.ricardosp.presentclass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "74527096262-5nr61mfan19d9ho44l9ifahsa8mcg3l1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ricardosp.presentclass",
+            "certificate_hash": "852f35cf4f99de065ddde0f2e38b1c9f9152a7b7"
+          }
+        },
+        {
+          "client_id": "74527096262-9id1mkkf6asksvc2fe4mta11jke5lmmd.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "74527096262-9id1mkkf6asksvc2fe4mta11jke5lmmd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANgw6HlSchS4LHUArzw3DiHRreNtrntlU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "74527096262-9id1mkkf6asksvc2fe4mta11jke5lmmd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

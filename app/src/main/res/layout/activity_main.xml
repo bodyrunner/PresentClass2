@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/backgroud_tela"
+    tools:context="com.ricardosp.presentclass.Activity.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="16dp"
+        android:gravity="center">
+
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/login"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"/>
+
+        <com.beardedhen.androidbootstrap.BootstrapEditText
+            app:bootstrapSize="xl"
+            app:bootstrapBrand="info"
+            app:roundedCorners="true"
+            android:layout_marginTop="10dp"
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="E-MAIL"
+            android:inputType="textEmailAddress"/>
+
+
+        <com.beardedhen.androidbootstrap.BootstrapEditText
+            app:bootstrapSize="xl"
+            app:bootstrapBrand="info"
+            app:roundedCorners="true"
+            android:layout_marginTop="10dp"
+            android:id="@+id/edtSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="SENHA"
+            android:inputType="textPassword"/>
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ACESSAR"
+            app:bootstrapBrand="success"
+            app:bootstrapSize="xl"
+            app:buttonMode="regular"
+            app:showOutline="false"
+            app:roundedCorners="true"
+            android:layout_marginTop="20dp"/>
+
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

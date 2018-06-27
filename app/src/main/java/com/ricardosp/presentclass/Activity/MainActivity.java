@@ -1,12 +1,16 @@
 package com.ricardosp.presentclass.Activity;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
@@ -28,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private BootstrapEditText edtSenhaLogin;
     private BootstrapButton btnLogin;
     private Usuario usuario;
+    private TextView txtRecuperarSenha;
+    private AlertDialog alerta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +43,13 @@ public class MainActivity extends AppCompatActivity {
         edtEmailLogin = (BootstrapEditText) findViewById(R.id.edtEmail);
         edtSenhaLogin = (BootstrapEditText) findViewById(R.id.edtSenha);
         btnLogin = (BootstrapButton) findViewById(R.id.btnLogin);
+        txtRecuperarSenha = (TextView) findViewById(R.id.txtRecuperarSenha);
 
-        permission();
+        final EditText editTextEmail = new EditText(MainActivity.this);
+        editTextEmail.setHint("exemplo@exemplo.com");
+
+
+        permissoes();
 
         if (usuarioLogado()){
             Intent intentMinhaConta = new Intent(MainActivity.this, PrincipalActivity.class);
@@ -67,6 +78,76 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+        txtRecuperarSenha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+                builder.setCancelable(false);
+
+                builder.setTitle("Recuperar senha");
+
+                builder.setMessage("Informe o seu e-mail");
+
+                builder.setView(editTextEmail);
+
+                if (!editTextEmail.getText().equals("")){
+                    builder.setPositiveButton("Recuperar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            autenticacao = FirebaseAuth.getInstance();
+
+                            String emailRecuperar = editTextEmail.getText().toString();
+
+
+
+                            autenticacao.sendPasswordResetEmail(emailRecuperar).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()){
+
+                                        Toast.makeText(MainActivity.this, "Logo você receberá uma mensagem em seu email!", Toast.LENGTH_SHORT).show();
+
+                                        Intent intent =  getIntent();
+                                        finish();
+                                        startActivity(intent);
+
+                                    }else{
+                                        Toast.makeText(MainActivity.this, "Falha ao enviar mensagem ao e-mail!", Toast.LENGTH_SHORT).show();
+
+                                        Intent intent =  getIntent();
+                                        finish();
+                                        startActivity(intent);
+                                    }
+
+                                }
+                            });
+
+                        }
+                    });
+
+                    builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            Intent intent =  getIntent();
+                            finish();
+                            startActivity(intent);
+
+                        }
+                    });
+
+
+
+                }else{
+                    Toast.makeText(MainActivity.this, "Preencha o campo de e-mail", Toast.LENGTH_SHORT).show();
+                }
+
+                alerta =  builder.create();
+
+                alerta.show();
+            }
+        });
     }
 
     private void validarLogin() {
@@ -113,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public  void permission(){
+    public  void permissoes(){
         int PERMISSION_ALL = 1;
 
         String [] PERMISSION = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};

@@ -125,7 +125,7 @@ public class UploadFotoActivity extends AppCompatActivity {
         final int heigth = 300;
         final int width = 300;
 
-        if (requestCode == Activity.RESULT_OK) {
+        if (resultCode == Activity.RESULT_OK) {
             if (requestCode == 123) {
                 Uri imagemSelecionada = data.getData();
                 Picasso.with(UploadFotoActivity.this).load(imagemSelecionada.toString()).resize(width, heigth).centerCrop().into(imageView);

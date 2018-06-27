@@ -95,13 +95,27 @@ public class PrincipalActivity extends AppCompatActivity {
             deslogarUsuario();
         }else if (id == R.id.action_cad_foto_perfil_aluno){
             uploadFotoPerfil();
+        }else if (id == R.id.action_cadastro_sistema){
+            abrirTelaCadastroSistema();
+        }else if (id == R.id.action_efetuar_chamada){
+            abrirTelaChamada();
         }
+
+
 
 
         return super.onOptionsItemSelected(item);
     }
     private void abrirTelaCadastroUsuario(){
         Intent intent = new Intent(PrincipalActivity.this, CadastroUsuarioActivity.class);
+        startActivity(intent);
+    }
+    private void abrirTelaCadastroSistema(){
+        Intent intent = new Intent(PrincipalActivity.this, CadastroActivity.class);
+        startActivity(intent);
+    }
+    private void abrirTelaChamada(){
+        Intent intent = new Intent(PrincipalActivity.this, EfetuarChamadaActivity.class);
         startActivity(intent);
     }
     private void deslogarUsuario(){

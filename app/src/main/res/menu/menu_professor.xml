@@ -2,16 +2,31 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<item
-    android:id="@+id/action_sair_professor"
-    android:orderInCategory="1000"
-    android:title="Sair"
-    app:showAsAction="collapseActionView"/>
+    <item
+        android:id="@+id/action_sair_professor"
+        android:orderInCategory="1000"
+        android:title="Sair"
+        app:showAsAction="collapseActionView"/>
 
-<item
-    android:id="@+id/action_add_usuario"
-    android:orderInCategory="100"
-    android:title="+ Usuario"
-    app:showAsAction="collapseActionView"/>
+
+    <item
+        android:id="@+id/action_cadastro_sistema"
+        android:orderInCategory="900"
+        android:title="Cadastro Sistema"
+        app:showAsAction="collapseActionView"/>
+
+    <item
+        android:id="@+id/action_efetuar_chamada"
+        android:orderInCategory="800"
+        android:title="Efetuar Chamada"
+        app:showAsAction="collapseActionView"/>
+
+
+
+    <item
+        android:id="@+id/action_add_usuario"
+        android:orderInCategory="1"
+        android:title="+ Usuario"
+        app:showAsAction="collapseActionView"/>
 
 </menu>

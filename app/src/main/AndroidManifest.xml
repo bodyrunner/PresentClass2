@@ -22,7 +22,9 @@
         </activity>
         <activity android:name=".Activity.CadastroUsuarioActivity" />
         <activity android:name=".Activity.PrincipalActivity" />
-        <activity android:name=".Activity.UploadFotoActivity"></activity>
+        <activity android:name=".Activity.UploadFotoActivity" />
+        <activity android:name=".Activity.CadastroActivity" />
+        <activity android:name=".Activity.EfetuarChamadaActivity"></activity>
     </application>
 
 </manifest>

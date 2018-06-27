@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/backgroud_tela"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="com.ricardosp.presentclass.Activity.CadastroUsuarioActivity">
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.CadastroActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -24,55 +24,35 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CADASTRO DE USUÁRIO"
+                android:text="CADASTRO DE TURMA"
                 android:textAlignment="center"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <com.beardedhen.androidbootstrap.BootstrapEditText
-                android:id="@+id/edtCadEmail"
+                android:id="@+id/edtCadTurma"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="E-mail"
-                android:inputType="textEmailAddress"
-                app:bootstrapBrand="info"
-                app:bootstrapSize="xl"
-                app:roundedCorners="true" />
-
-            <com.beardedhen.androidbootstrap.BootstrapEditText
-                android:id="@+id/edtCadSenha1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="Senha"
-                android:inputType="textPassword"
-                app:bootstrapBrand="info"
-                app:bootstrapSize="xl"
-                app:roundedCorners="true" />
-
-            <com.beardedhen.androidbootstrap.BootstrapEditText
-                android:id="@+id/edtCadSenha2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="Repita a senha"
-                android:inputType="textPassword"
-                app:bootstrapBrand="info"
-                app:bootstrapSize="xl"
-                app:roundedCorners="true" />
-
-
-            <com.beardedhen.androidbootstrap.BootstrapEditText
-                android:id="@+id/edtCadNome"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="Nome"
+                android:hint="Nome da turma"
                 android:inputType="textCapWords"
                 app:bootstrapBrand="info"
                 app:bootstrapSize="xl"
                 app:roundedCorners="true" />
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                android:id="@+id/edtCadCiclo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Ciclo da turma"
+                android:inputType="textCapWords"
+                app:bootstrapBrand="info"
+                app:bootstrapSize="xl"
+                app:roundedCorners="true" />
+
+
+
 
 
             <RadioGroup
@@ -81,18 +61,18 @@
 
 
                 <RadioButton
-                    android:id="@+id/rbProfessor"
+                    android:id="@+id/rbManha"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Professor"
+                    android:text="Manhã"
                     android:textColor="@color/colorWhite" />
 
                 <RadioButton
-                    android:id="@+id/rbAluno"
+                    android:id="@+id/rbNoite"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Aluno"
+                    android:text="Noite"
                     android:textColor="@color/colorWhite" />
             </RadioGroup>
 

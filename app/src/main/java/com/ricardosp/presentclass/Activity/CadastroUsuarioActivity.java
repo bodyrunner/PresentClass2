@@ -78,6 +78,13 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
             }
         });
 
+        btnCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chamaTelaPrincipal();
+            }
+        });
+
     }
 
     private void cadastrarUsuario(){
@@ -104,13 +111,13 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                     try {
                         throw task.getException();
                     }catch (FirebaseAuthWeakPasswordException e){
-                        erroExcecao = "Digite pelo menos 8 caracteres com letras e números";
+                        erroExcecao = " Digite pelo menos 8 caracteres com letras e números";
                     }catch (FirebaseAuthInvalidCredentialsException e){
-                        erroExcecao = "O e-mail digitado é inválido!";
+                        erroExcecao = " O e-mail digitado é inválido!";
                     }catch (FirebaseAuthUserCollisionException e){
-                        erroExcecao = "E-mail já cadastrado";
+                        erroExcecao = " E-mail já cadastrado!";
                     } catch (Exception e) {
-                        erroExcecao = "Erro ao efetuar o cadastro!";
+                        erroExcecao = " Erro ao efetuar o cadastro!";
 
                         e.printStackTrace();
                     }
@@ -157,6 +164,12 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void chamaTelaPrincipal(){
+        Intent intent = new Intent(CadastroUsuarioActivity.this, PrincipalActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 
